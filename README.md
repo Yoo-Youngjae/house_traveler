@@ -59,7 +59,7 @@ In this way, a trajectory consisting of 300 frames is created. After that, the t
 
 ### Citation
 
-If you find XX useful in your research, please consider citing:
+If you find House-Traveler or PlaceNet useful in your research, please consider citing:
 
     @inproceedings{placenet,
         Author = {Chung-Yeon Lee and Youngjae Yoo and Byeong-Tak Zhang},
