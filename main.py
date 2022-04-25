@@ -276,7 +276,7 @@ def make2dMap(id):
                         max[1] = node['bbox']['max'][2]
                     for i in range(int(node['bbox']['min'][0] * 10), int(node['bbox']['max'][0] * 10)):
                         for j in range(int(node['bbox']['min'][2] * 10), int(node['bbox']['max'][2] * 10)):
-                            map[j][i] = (255, 255, 255) # todo light gray (211, 211, 211)
+                            map[j][i] = (255, 255, 255) #  light gray (211, 211, 211)
                 except Exception as e:
                     print(e)
 
@@ -511,12 +511,23 @@ def make_right_travel_with_smooth(np_map, start_point, min, max,
 
     return full_path, visited
 
-if __name__ == '__main__':
+def get_config():
+    import argparse
 
-    with_suncg = True
-    house_id = '2986fc10adbc33689803254b3541faff' # just for example
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument('--with_suncg', type=bool, default=False)
+    parser.add_argument('--house_id', type=str, default='2986fc10adbc33689803254b3541faff') # just for example
+    parser.add_argument('--show_fig', type=bool, default=True)  # just for example
+    args = parser.parse_args()
+
+    return args
+
+if __name__ == '__main__':
+    args = get_config()
+    house_id = args.house_id
     # 1. make map
-    if with_suncg:
+    if args.with_suncg:
         house_map, min_in_map, max_in_map = makeHouseMap(house_id)
         topview_map = make2dMap(house_id)
         topview_map = topview_map[int(min_in_map[1] * 10): int(max_in_map[1] * 10),
@@ -530,7 +541,7 @@ if __name__ == '__main__':
 
 
     # 2. find start point in house
-    if with_suncg:
+    if args.with_suncg:
         start_point_list = drawPolyLabel(id=house_id, RobotHeight=0.75, CarpetHeight=0.15)
     else:
         start_point_list = [[[53.87932367783033, 37.78257584739472], 1.1871773392811877, ['Bathroom']],
@@ -556,7 +567,7 @@ if __name__ == '__main__':
     for start_point, dist, roomtype in start_point_list:
         _path, visited = make_right_travel_with_smooth(house_map, start_point,min_in_map, max_in_map,
                                                        visited, topview_map, threshold=180,
-                                                       show_fig=True, show_fig_detail=False, step_length=180)  # threshold=180 : 1 path = 180m
+                                                       show_fig=args.show_fig, show_fig_detail=False, step_length=180)  # threshold=180 : 1 path = 180m
         print(_path)
     plt.axis('off')
     plt.show()
