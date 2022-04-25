@@ -2,7 +2,7 @@
 
 # Introduction
 
-We propose a trajectory generator, the House-Traveler, which creates natural paths for the 3D house exploration. It is important to find optimal trajectories allowing an agent to observe every aspect of the scene efficiently while avoiding redundant visiting. To accomplish this, we developed a trajectory generator. 
+We propose a trajectory generator, the House-Traveler, which creates natural paths for the 3D house(based on SUNCG) exploration. It is important to find optimal trajectories allowing an agent to observe every aspect of the scene efficiently while avoiding redundant visiting. To accomplish this, we developed a trajectory generator. 
 
 This process begins by finding the appropriate starting points. A starting point should be placed in a space with sufficient movable area to prevent failure of path creation, taking into account the agent's size and avoidance range. To this end, we use the Pole of Inaccessibility (PIA), which is a point where the largest circle can be drawn in the polygon. We extract PIAs where the circle radius is greater than 40 cm inside each room of the house as the starting points. From a starting point, a trajectory is first drawn by the wall-following algorithm with the right-hand rule in the movable area of the house while avoiding obstacles (e.g., wall, furniture, household objects on the floor).
 
