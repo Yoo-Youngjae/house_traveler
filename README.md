@@ -45,6 +45,15 @@ In this way, a trajectory consisting of 300 frames is created. After that, the t
 
 
 
+### Data preparation
+
+1. First, you need to have a top-down map of the 3D house. As example data for this, topview_map.npy and house_map.npy files are in the data folder.
+2. Next, meta information is needed to know the location of each room and object. An example is as sample_house.json in the data folder.
+
+
+
+
+
 ### Running the demo
 
 1. Run the following python file for test 
@@ -65,4 +74,3 @@ If you find House-Traveler or PlaceNet useful in your research, please consider 
         booktitle = {International Joint Conference on Artificial Intelligence (IJCAI)},
         Year = {2022}
     }
-
