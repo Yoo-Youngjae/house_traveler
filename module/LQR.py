@@ -1,5 +1,10 @@
+
 """
+This code originates from https://github.com/AtsushiSakai/PythonRobotics/blob/master/PathTracking/lqr_speed_steer_control/lqr_speed_steer_control.py
+
+----------
 Path tracking simulation with LQR speed and steering control
+
 author Atsushi Sakai (@Atsushi_twi)
 """
 import math

@@ -49,10 +49,8 @@ In this way, a trajectory consisting of 300 frames is created. After that, the t
 
 1. Run the following python file for test 
 
-   1. If you have a SUNCG dataset, put the house folder under $ROOT/data
-
    ```Shell
-   python main.py
+   python house_traveler.py
    ```
 
 

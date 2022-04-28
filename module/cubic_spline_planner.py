@@ -1,4 +1,8 @@
+
 """
+This code originates from https://github.com/AtsushiSakai/PythonRobotics/blob/4f8c923589af8738b97fe821938ea5f51d55b096/PathPlanning/CubicSpline/cubic_spline_planner.py
+
+----------
 Cubic spline planner
 Author: Atsushi Sakai(@Atsushi_twi)
 """
